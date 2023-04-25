@@ -37,7 +37,7 @@ class User(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers')#symmetrical= 일촌은 True 팔로우는 False
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers', blank=True)#symmetrical= 일촌은 True 팔로우는 False
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
